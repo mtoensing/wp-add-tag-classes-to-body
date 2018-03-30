@@ -13,10 +13,10 @@
 function add_tags( $classes = '' ) {
 
 	$tags = get_the_tags();
-	foreach ( $tags as $tag ) {
-		$classes[] = 'ptag-' . $tag->slug;
-
-
+	if ( $tags ) {
+		foreach ( $tags as $tag ) {
+			$classes[] = 'ptag-' . $tag->slug;
+		}
 	}
 
 	return $classes;
