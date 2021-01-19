@@ -1,26 +1,30 @@
 <?php
 
 /*
-  Plugin Name: Add tag classes to body
-  Plugin URI: http://www.marc.tv/blog/marctv-wordpress-plugins/
+  Plugin Name: Add post tag slugs as CSS body classes
+  Plugin URI: https://github.com/mtoensing/wp-add-tag-classes-to-body
   Description: Adds the post tags to the body tag as classes.
-  Version: 1.2
-  Author: MarcDK
-  Author URI: http://www.marc.tv
+  Version: 1.3
+  Author: Marc Tönsing
+  Author URI: https://marc.tv
   License: GPL2
   GitHub Plugin URI: mtoensing/wp-add-tag-classes-to-body
  */
 
 function add_tags( $classes = '' ) {
 
-	if(has_post_thumbnail()){
-		$classes[] = 'has-post-thumbnail';
-	}
+	if( is_single() ) {
 
-	$tags = get_the_tags();
-	if ( $tags ) {
-		foreach ( $tags as $tag ) {
-			$classes[] = 'ptag-' . $tag->slug;
+		if(has_post_thumbnail()){
+			$classes[] = 'has-post-thumbnail';
+		}
+
+		$tags = get_the_tags();
+
+		if ( $tags ) {
+			foreach ( $tags as $tag ) {
+				$classes[] = 'ptag-' . $tag->slug;
+			}
 		}
 	}
 

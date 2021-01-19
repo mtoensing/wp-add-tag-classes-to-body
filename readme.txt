@@ -1,16 +1,13 @@
-=== Add tag classes to body ===
+=== Add post tag slugs as CSS body classes ===
 Contributors: MarcDK
-Tags: marctv, body, classes, tags
+Tags: body, classes, tags
 Requires at least: 3.8
-Tested up to: 4.8.2
-Stable tag: 1.2
+Tested up to: 5.6
+Stable tag: 1.3
 
 == Description ==
 
-Adds the post tags to the body tag as classes.
-
-
-
+Adds the post tag slugs to the body tag as CSS classes on single posts.
 
 == Changelog ==
 
